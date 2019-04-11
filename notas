@@ -1,0 +1,78 @@
+ORGANIZACION DE CARPETAS
+Yii2's application structure is precise and clear. It contains the following folders −
+
+    Assets − This folder includes all .js and .css files referenced in the web page.
+
+    Commands − This folder includes the controllers that can be used from the terminal.
+
+    Config − This folder contains config files for managing database, application and application parameters.
+
+    Mail − This folder includes the mail layout.
+
+    Models − This folder includes the models used in the application.
+
+    Runtime − This folder is for storing runtime data.
+
+    Tests − This folder includes all the tests (acceptance, unit, functional).
+
+    Vendor − This folder contains all the third-party packages managed by Composer.
+
+    Views − This folder is for views, that are displayed by the controllers. The layout folder is a for page template.
+
+    Web − The entry point from web.
+
+
+Models, Views, and Controllers
+    ----->>>> Controllers in web applications should extend from yii\web\Controller or its child classes. In console applications, they should extend from yii\console\Controller or its child classes.
+
+    ----->>>> Models are objects representing business logic and rules. To create a model, you should extend the yii\base\Model class or its subclasses.
+            |------>>> Attributes represent the business data. They can be accessed like array elements or object properties. Each attribute is a publicly accessible property of a model. To specify what attributes a model possesses, you should override the yii\base\Model::attributes() method.
+            |------>>> Senarios You can use a model in different scenarios. For example, when a guest wants to send a contact form, we need all the model attributes. When a user wants to do the same thing, he is already logged in, so we do not need his name, as we can easily take it from the DB.
+                       To declare scenarios, we should override the scenarios() function. It returns an array whose keys are the scenario names and values are active attributes. Active attributes are the ones to validate. They can also be massively assigned.
+
+    --->>>> Views When rendering a view, you can define the view using as a view name or a view file path/alias. A view name is resolved in the following way −
+            A view name can omit the extension. For example, the about view corresponds to the about.php file.
+            If the view name starts with “/”, then if currently active module is forum, and the view name is comment/post, the path would be @app/modules/forum/views/comment/post. If there is no active module, the path would be @app/views/comment/post.
+            If the view name starts with “//”, the corresponding path would be @app/views/ViewName. For example, //site/contact corresponds to @app/views/site/contact.php.
+            If the view name is contact, and the context controller is SiteController, then the path would be @app/views/site/contact.php.
+            If the price view is rendered within the goods view, then price would be resolved as @app/views/invoice/price.php if it is being rendered in the @app/views/invoice/goods.php.
+
+Models are for data representation (usually from the database). View are for displaying the data. Controllers are for processing requests and generating responses.
+
+--Components
+
+To create a reusable functionality, the user can write his own components. Components are just objects that contain logic. For example, a component could be a weight converter.
+Application components
+
+These are objects that instanced just one time in the whole application. The main difference between Components and Application components is that the latter can have only one instance in the whole application.
+--Widgets
+    ---->>> A widget is a reusable client-side code, which contains HTML, CSS, and JS. This code includes minimal logic and is wrapped in a yii\base\Widget object. We can easily insert and apply this object in any view.
+            Widgets are reusable objects containing both logic and rendering code. A widget could be, for example, a gallery slider.
+            To use a widget in a View, you should call the yii\base\Widget::widget() function. This function takes a configuration array for initializing the widget. In the previous example, we inserted a progress bar with percent and labelled parameters of the configuration object.
+            Some widgets take a block of content. It should be enclosed between yii\base\Widget::begin() and yii\base\Widget::end() functions.
+            To create a widget, you should extend from yii\base\Widget. Then you should override the yii\base\Widget::init() and yii\base\Widget::run() functions. The run() function should return the rendering result. The init() function should normalize the widget properties.
+
+--Filters
+
+Filters are objects that run before or after the execution of the Controller actions.
+
+--Modules
+
+You can consider Modules as reusable subapps, containing Models, Views, Controllers, and so forth.
+    ----->>A module is an entity that has its own models, views, controllers, and possibly other modules. It is practically an application inside the application.
+           When creating a module, a convention is to put the controller classes into the controller’s directory of the module's base path. We have just defined the actionGreet function, that just returns a greet view.
+           Views in the module should be put in the views folder of the module's base path. If views are rendered by a controller, they should be located in the folder corresponding to the controllerID. Add custom folder to the views folder.
+           Every time a module is accessed, an instance of the correspondent module class is created. The init() function is for initializing the module's properties.
+           When creating a module, a convention is to put the controller classes into the controller’s directory of the module's base path. We have just defined the actionGreet function, that just returns a greet view.
+           Views in the module should be put in the views folder of the module's base path. If views are rendered by a controller, they should be located in the folder corresponding to the controllerID. Add custom folder to the views folder.
+
+
+---Extensions
+
+Extensions are packages that can be managed by the Composer.
+
+
+
+//////******************////////////////
+Start Server
+php -S localhost:8080 -t web
