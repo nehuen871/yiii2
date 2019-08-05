@@ -76,3 +76,22 @@ Extensions are packages that can be managed by the Composer.
 //////******************////////////////
 Start Server
 php -S localhost:8080 -t web
+
+
+
+
+instalar apache2, mysql-server, php7.2
+descargar la vercion 6.9 del crm de git
+instalar openssl,mcrypt,Zip,GD,imap extension,ssh2 extension,cURL,PDO MySQL,Multibyte string,
+
+/**/
+The following required PHP function(s) is/are missing or disabled: mb_regex_encoding
+/**/
+
+mover la carpeta del crm a /var/ww/html
+ingresar a la parte de instalacion, instalar y despues actualizar a la ultima vercion
+
+
+
+
+
