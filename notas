@@ -116,6 +116,18 @@ mover la carpeta del crm a /var/ww/html
 ingresar a la parte de instalacion, instalar y despues actualizar a la ultima vercion
 
 
+/**/
+CREATE DATABASE x2engine;
+CREATE USER 'x2crm'@'localhost' IDENTIFIED BY 'x2crm';
+GRANT ALL PRIVILEGES ON * . * TO 'x2crm'@'localhost';
+/**/
+
+Database
+us:admin
+ps:admin
+
+
+
 
 
 
