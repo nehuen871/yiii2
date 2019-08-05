@@ -81,12 +81,24 @@ php -S localhost:8080 -t web
 
 
 instalar apache2, mysql-server, php7.2
-descargar la vercion 6.9 del crm de git
-instalar openssl,mcrypt,Zip,GD,imap extension,ssh2 extension,cURL,PDO MySQL,Multibyte string,
+descargar la vercion 6.9 del crm de git ---> https://github.com/X2Engine/X2CRM/tree/6.9
+instalar openssl,mcrypt,
 
-/**/
-The following required PHP function(s) is/are missing or disabled: mb_regex_encoding
-/**/
+Zip: sudo apt-get install php7.2-zip
+
+GD:sudo apt-get install php7.2-gd,
+
+imap extension:sudo apt-get install php7.2-imap
+
+ssh2 extension: sudo apt-get install libssh2-1 php-ssh2 -y,
+
+cURL: sudo apt-get install php7.2-curl
+
+PDO MySQL:
+sudo apt-get install php7.2-mysql
+sudo phpenmod pdo_mysql
+
+Multibyte string: sudo apt-get install php7.2-mbstring,
 
 mover la carpeta del crm a /var/ww/html
 ingresar a la parte de instalacion, instalar y despues actualizar a la ultima vercion
