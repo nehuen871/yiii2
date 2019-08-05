@@ -82,7 +82,19 @@ php -S localhost:8080 -t web
 
 instalar apache2, mysql-server, php7.2
 descargar la vercion 6.9 del crm de git ---> https://github.com/X2Engine/X2CRM/tree/6.9
-instalar openssl,mcrypt,
+instalar openssl,
+
+-----
+mcrypt:
+sudo apt install php-dev libmcrypt-dev php-pear
+sudo pecl channel-update pecl.php.net
+sudo pecl install mcrypt-1.0.1
+
+Finally, run the commands below to open PHP configuration file…
+sudo nano /etc/php/7.2/cli/php.ini
+Then add the line below into the file, just below [PHP] and save…
+extension=mcrypt.so
+-------
 
 Zip: sudo apt-get install php7.2-zip
 
