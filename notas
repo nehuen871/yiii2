@@ -80,7 +80,7 @@ php -S localhost:8080 -t web
 
 
 
-instalar apache2, mysql-server, php7.2
+instalar apache2, mysql-server, php5.6
 descargar la vercion 6.9 del crm de git ---> https://github.com/X2Engine/X2CRM/tree/6.9
 instalar openssl,
 
@@ -96,21 +96,21 @@ Then add the line below into the file, just below [PHP] and save…
 extension=mcrypt.so
 -------
 
-Zip: sudo apt-get install php7.2-zip
+Zip: sudo apt-get install php5.6-zip
 
-GD:sudo apt-get install php7.2-gd,
+GD:sudo apt-get install php5.6-gd,
 
-imap extension:sudo apt-get install php7.2-imap
+imap extension:sudo apt-get install php5.6-imap
 
 ssh2 extension: sudo apt-get install libssh2-1 php-ssh2 -y,
 
-cURL: sudo apt-get install php7.2-curl
+cURL: sudo apt-get install php5.6-curl
 
 PDO MySQL:
-sudo apt-get install php7.2-mysql
+sudo apt-get install php5.6-mysql
 sudo phpenmod pdo_mysql
 
-Multibyte string: sudo apt-get install php7.2-mbstring,
+Multibyte string: sudo apt-get install php5.6-mbstring,
 
 mover la carpeta del crm a /var/ww/html
 ingresar a la parte de instalacion, instalar y despues actualizar a la ultima vercion
