@@ -78,9 +78,24 @@ Start Server
 php -S localhost:8080 -t web
 
 
+Completely remove php from ubuntu 17.10 using terminal using following code
+1st Step:-sudo apt-get remove –purge php*
+2nd Step:-sudo apt-get purge php*
+3rs Step:-sudo apt-get autoremove.
+4th Step:-sudo apt-get autoclean.
+5th Step:-sudo apt-get remove dbconfig-php.
+6th Step:-sudo apt-get dist-upgrade.
+
+instalar apache2, mysql-server, 
+
+php5.6
+
+sudo apt-get install python-software-properties
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install -y php5.6
 
 
-instalar apache2, mysql-server, php5.6
 descargar la vercion 6.9 del crm de git ---> https://github.com/X2Engine/X2CRM/tree/6.9
 instalar openssl,
 
